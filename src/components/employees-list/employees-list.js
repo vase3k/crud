@@ -2,8 +2,9 @@ import EmployeesListItem from '../employees-list-item/employees-list-item';
 import './employees-list.css';
 
 const EmployeesList = ({ data }) => {
-    const elements = data.map((e, i) => {
-        return <EmployeesListItem {...e} key={i + Math.random().toFixed(3)} />;
+    const elements = data.map(e => {
+        const { id, ...itemProps } = e;
+        return <EmployeesListItem key={id} {...itemProps} />;
     });
 
     return <ul className="app-list list-group">{elements}</ul>;
