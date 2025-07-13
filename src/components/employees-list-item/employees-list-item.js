@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { Component } from 'react';
 
 import './employees-list-item.css';
 
@@ -18,8 +18,9 @@ class EmployeesListItem extends Component {
     like = () => {
         this.setState(({ like }) => ({ like: !like }));
     };
+
     render() {
-        const { name, lastName, salary } = this.props;
+        const { name, lastName, salary, onDelete } = this.props;
         const { increase, like } = this.state;
 
         let classNames = 'list-group-item d-flex justify-content-between';
@@ -46,7 +47,7 @@ class EmployeesListItem extends Component {
                             <i className="fas fa-cookie"></i>
                         </button>
 
-                        <button type="button" className="btn-trash btn-sm ">
+                        <button type="button" className="btn-trash btn-sm " onClick={onDelete}>
                             <i className="fas fa-trash"></i>
                         </button>
                         <i className="fas fa-star"></i>
