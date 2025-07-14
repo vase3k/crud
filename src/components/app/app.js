@@ -40,6 +40,14 @@ class App extends Component {
         });
     };
 
+    onToggleIncrease = id => {
+        console.log(`increase this ${id}`);
+    };
+
+    onToggleRise = id => {
+        console.log(`rise this ${id}`);
+    };
+
     render() {
         return (
             <div className="app">
@@ -50,7 +58,12 @@ class App extends Component {
                     <AppFilter />
                 </div>
 
-                <EmployeesList data={this.state.data} onDelete={this.deleteItem} />
+                <EmployeesList
+                    data={this.state.data}
+                    onDelete={this.deleteItem}
+                    onToggleIncrease={this.onToggleIncrease}
+                    onToggleRise={this.onToggleRise}
+                />
                 <EmployeesAddForm onAdd={this.addItem} />
             </div>
         );
