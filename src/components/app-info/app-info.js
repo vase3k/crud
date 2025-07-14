@@ -6,6 +6,7 @@ const AppInfo = props => {
             <h1>Учёт сотрудников в компании President Luxe</h1>
             <h2>Общее число сотрудников: {props.employees}</h2>
             <h2>Премию получат: {props.increase}</h2>
+            <h2>На повышение идут: {props.rise}</h2>
         </div>
     );
 };

@@ -14,6 +14,15 @@ class EmployeesAddForm extends Component {
     }
 
     onValueChange = e => {
+        const length = e.target.value.length;
+        if (e.target.getAttribute('name') !== 'salary') {
+            if (length < 3 && length !== 0) {
+                e.target.style.borderColor = 'var(--bs-danger)';
+            } else {
+                e.target.removeAttribute('style');
+            }
+        }
+
         this.setState({
             [e.target.name]: e.target.value,
         });
