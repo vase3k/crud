@@ -4,14 +4,11 @@ import nextId from 'react-id-generator';
 import './employees-add-form.scss';
 
 class EmployeesAddForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            lastName: '',
-            salary: '',
-        };
-    }
+    state = {
+        name: '',
+        lastName: '',
+        salary: '',
+    };
 
     onValueChange = e => {
         const length = e.target.value.length;
@@ -36,6 +33,12 @@ class EmployeesAddForm extends Component {
             lastName: '',
             salary: '',
         });
+    };
+
+    static logged = 'on';
+
+    static onLock = () => {
+        console.log('Hey');
     };
 
     render() {
@@ -77,5 +80,8 @@ class EmployeesAddForm extends Component {
         );
     }
 }
+
+EmployeesAddForm.onLock();
+console.log(EmployeesAddForm.logged);
 
 export default EmployeesAddForm;
